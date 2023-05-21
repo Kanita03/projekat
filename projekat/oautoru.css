@@ -1,0 +1,93 @@
+header {
+    background-color:#283149 ;
+        padding: 20px;
+      }
+     
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav img{
+        width: 12vw;
+        height: 6vh;
+        position: absolute;
+        left: 85%;
+        top: 2%;
+      }
+      .kutija{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-color: #EAE6E5;
+        
+      }
+      .ja{flex: 1;
+        position: relative;
+        left: 10%;
+        padding-bottom: 20px;
+        top: 90px;
+
+
+      }
+      h2{
+        position: relative;
+        left: 15px;
+      }
+      p{
+        padding: 15px;
+        font-size: 20px;
+      }
+      .lepotica{flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+        position: relative;
+        bottom: 30px;
+
+      }
+      .lepotica img{
+        max-width:90%;
+        max-height: 80%;
+      }
+      
+      
+      footer {
+        background-color:#283149;
+        padding: 20px;
+        color: white;
+      }
+      
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+      }
+    
+    .footer-social a i.fab {
+        color:white;
+        margin-right: 30px;
+        width: 40%;
+        height: 40%;
+        position: relative;
+        right: 100%;
+    
+        padding: 15px;
+        font-size: 35px;
+    
+    }
+    

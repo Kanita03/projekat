@@ -1,0 +1,112 @@
+header {
+    background-color:#283149 ;
+        padding: 20px;
+      }
+     
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav img{
+        width: 12vw;
+        height: 6vh;
+        position: absolute;
+        left: 85%;
+        top: 2%;
+      }
+      .glavni-div {
+        display: flex;
+        height: 100vh;
+       
+      }
+      .container {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-color: #EAE6E5;
+        
+      }
+      
+      .registracija {
+        flex: 1;
+        position: relative;
+        left: 10%;
+        padding-bottom: 20px;
+        top: 90px;
+      }
+      .ime{
+        padding-bottom: 45px;
+        
+      }
+      .prezime{
+        padding-bottom: 45px;
+
+      }
+      .korisnicko{
+        padding-bottom: 45px;
+      }
+      .lozinka{
+        padding-bottom: 45px;
+      }
+      .datum{
+        padding-bottom: 45px;
+      }
+      label{
+        font-size: 24px;
+      }
+      input{
+        width: 300px;
+      }
+      .slika {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px;
+        position: relative;
+        bottom: 30px;
+      }
+      
+      .slika img {
+        max-width: 90%;
+        max-height: 100%;
+      }
+      footer {
+        background-color:#283149;
+        padding: 20px;
+        color: white;
+      }
+      
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        
+      }
+    
+    .footer-social a i.fab {
+        color:white;
+        margin-right: 30px;
+        width: 40%;
+        height: 40%;
+        position: relative;
+        right: 100%;
+    
+        padding: 15px;
+        font-size: 35px;
+    
+    }
+      

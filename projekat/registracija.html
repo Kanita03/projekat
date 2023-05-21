@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app3.js" defer></script>
+    <link rel="stylesheet" href="registracija.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+          <img src="kana.jpg" alt="">
+          
+          <ul>
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a class="trecijs" href="registracija.html">Registracija</a></li>
+            <li><a href="o_autoru.html">O autoru</a></li>
+            <li><a href="smestaj_i_usluge.html">Smještaj i usluge</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      
+          <div class="container">
+            <div class="registracija">
+              <h2>Registracija</h2>
+              <form>
+                <div class="ime">
+                  <label for="ime">Ime:</label>
+                  <input type="text" id="ime" name="ime" placeholder="Unesite ime">
+                  <span id="ime-error" class="error-message"></span>
+               
+                </div>
+                <div class="prezime">
+                  <label for="email">Prezime:</label>
+                  <input type="text" id="prezime" name="prezime" placeholder="Unesite prezime" >
+                  <span id="prezime-error" class="error-message"></span>
+               
+                </div>
+                <div class="korisnicko">
+                  <label for="korisnicko-ime">Korisničko ime:</label>
+                  <input type="text" id="korisnicko-ime" name="korisnicko-ime" placeholder="Unesite korisničko ime">
+              
+                </div>
+                <div class="lozinka">
+                  <label for="lozinka">Lozinka:</label>
+                  <input type="password" id="lozinka" name="lozinka" placeholder="Unesite lozinku">
+                
+                </div>
+                <div class="datum">
+                  <label for="datum-rodjenja">Datum rođenja:</label>
+                  <input type="date" id="datum-rodjenja" name="datum-rodjenja">
+              
+                </div>
+                <button type="submit">Registruj se</button>
+              </form>
+            </div>
+            <div class="slika">
+              <img src="IL.JPG">
+            </div>
+          </div>
+          <footer>
+            <div class="footer-content">
+              <div class="footer-informacije">
+                <h3>Hotel Cocoa</h3>
+                <p>  Bečićka plaža 25,<br>
+                    Rafailovići <br>
+                    Budva, Montenegro</p>
+                <p>Telefon:+ 382 (0) 11 234 084 </p>
+                <p>E-mail: hotelcocao@gmail.com</p>
+              </div>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/?lang=de"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>   
+          </footer>  
+           
+          <script>
+
+            var currentLocation = window.location.href;
+                    
+                    
+                    var navLinks = document.querySelectorAll('nav ul li a');
+                    
+                    
+                    for (var i = 0; i < navLinks.length; i++) {
+                      var link = navLinks[i];
+                    
+                      
+                      if (link.href === currentLocation) {
+                       
+                        link.classList.add('active');
+                      }
+                    }
+                   
+            
+                    var imeInput = document.getElementById("ime");
+            var imeErrorElement = document.getElementById("ime-error");
+            
+            imeInput.addEventListener("input", proveriIme);
+            
+            function proveriIme() {
+              var ime = imeInput.value.trim();
+            
+              if (ime.length < 3 || !ime[0].match(/[A-ZČĆŽŠĐ]/)) {
+                imeErrorElement.textContent = "Greska, ime mora poceti velikim pocetnim slovom i imati najmanje 3 karaktera.";
+              } else {
+                imeErrorElement.textContent = "";
+              }
+            }
+            
+            
+            var prezimeInput = document.getElementById("prezime");
+            var prezimeErrorElement = document.getElementById("prezime-error");
+            
+            prezimeInput.addEventListener("input", proveriPrezime);
+            
+            function proveriPrezime() {
+              var prezime = prezimeInput.value.trim();
+            
+              var validacija = /^[A-Z][a-zA-Z]*vić$/;
+            
+              if (!validacija.test(prezime)) {
+                prezimeErrorElement.textContent = "Greska, prezime mora ispunjavati sledece uslove: pocinje velikim pocetnim slovom, ima najmanje 5 karaktera i zavrsava na 'vić'.";
+              } else {
+                prezimeErrorElement.textContent = "";
+              }
+            }
+            
+            function proveriFormu() {
+              proveriKorisnickoIme();
+              proveriIme();
+              proveriPrezime();
+              proveriEmail();
+              proveriLozinku();
+            
+              var korisnickoImeGreska = errorElement.textContent;
+              var imeGreska = imeErrorElement.textContent;
+              var prezimeGreska = prezimeErrorElement.textContent;
+              var emailGreska = emailErrorElement.textContent;
+              var lozinkaGreska = lozinkaErrorElement.textContent;
+            
+              var registerBtn = document.getElementById("registerBtn");
+            
+              if (
+                korisnickoImeGreska ||
+                imeGreska ||
+                prezimeGreska ||
+                emailGreska ||
+                lozinkaGreska
+              ) {
+                registerBtn.disabled = true;
+              } else {
+                registerBtn.disabled = false;
+              }
+            }
+            korisnickoImeInput.addEventListener("blur", proveriFormu);
+            imeInput.addEventListener("blur", proveriFormu);
+            prezimeInput.addEventListener("blur", proveriFormu);
+            emailInput.addEventListener("blur", proveriFormu);
+            lozinkaInput.addEventListener("blur", proveriFormu);
+            var forma = document.querySelector("form");
+            forma.addEventListener("submit", function (e) {
+              e.preventDefault();
+              // Slanje forme na novu stranicu
+              window.location.href = "uspesno.html";
+            });
+            
+            
+                  </script>
+            </body>
+            </html>
